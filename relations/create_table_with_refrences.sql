@@ -1,0 +1,22 @@
+-- CREATE TABLE addresses (
+--   id INT PRIMARY KEY AUTO_INCREMENT,
+--   --id SERIAL PRIMARY KEY, -- POSTGRESQL,
+--   street VARCHAR(300) NOT NULL,
+--   house_number VARCHAR(50) NOT NULL,
+--   city_id INT NOT NULL
+-- );
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    --id SERIAL PRIMARY KEY, -- POSTGRESQL,
+    first_name VARCHAR(300) NOT NULL,
+    last_name VARCHAR(300) NOT NULL,
+    email VARCHAR(300) NOT NULL,
+    address_id INT REFERENCES addresses (id) ON DELETE RESTRICT
+);
+
+-- CREATE TABLE cities (
+--   id INT PRIMARY KEY AUTO_INCREMENT,
+--  --id SERIAL PRIMARY KEY, -- POSTGRESQL,
+--  name VARCHAR(300) NOT NULL
+-- );
